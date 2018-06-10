@@ -31,25 +31,20 @@ public class ConsumerService {
                     throws IOException {
                 String message = new String(body, "UTF-8");
 
+                try{
+                    System.out.println(" [x] Received '" + message + "'");
 
-                System.out.println(" [x] Received '" + message + "'");
+                    channel.basicAck(envelope.getDeliveryTag(), false);
+                }catch(Exception e){
 
-
-                //ack
-//                try{
-//                    System.out.println(" [x] Received '" + message + "'");
-//
-//                    channel.basicAck(envelope.getDeliveryTag(), false);
-//                }catch(Exception e){
-//
-//                    channel.basicNack(envelope.getDeliveryTag(), false, true);
-//                }
+                    channel.basicNack(envelope.getDeliveryTag(), false, true);
+                }
             }
         };
 
         channel.basicConsume(QUEUE_NAME, false, consumer);
 
-        Thread.sleep(100L);
+        Thread.sleep(1000L);
     }
 
 }

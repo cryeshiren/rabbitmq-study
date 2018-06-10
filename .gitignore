@@ -1,2 +1,9 @@
 ### idea ###
 .idea/
+*.iml
+
+rabbitmq-consumer-service2/\.mvn/wrapper/
+
+rabbitmq-consumer-service2/mvnw
+
+rabbitmq-consumer-service2/mvnw\.cmd

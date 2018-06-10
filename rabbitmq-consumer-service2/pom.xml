@@ -8,7 +8,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>grapeleaf-sender-service</name>
+    <name>grapeleaf</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
